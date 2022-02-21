@@ -4,8 +4,9 @@ public class EmpWageBuilderUC1 {
 
 	public static void main(String[] args) {
 		// declare variables
-		final int PRESENT_WAGE_NUMBER = 2;
-		final int PRESENT = 1; 
+		final int PRESENT_WAGE_RANGE = 3;
+		final int PRESENT = 1;
+		final int PARTTIME = 2;
 		final int WAGE_PER_HOUR = 20;
 		int WORKING_HOUR = 0;
 		int EMP_WAGE=0;
@@ -15,10 +16,15 @@ public class EmpWageBuilderUC1 {
 		
 			System.out.println(isEmpPresent);
 			
-		if ( isEmpPresent==PRESENT ) {	
+		if ( isEmpPresent == PRESENT ) {	
 			System.out.println("The Employee is Present");
 			WORKING_HOUR = 8;
-		}else {			
+		}
+		else if ( isEmpPresent == PARTTIME ) {
+			System.out.println("The Employee works as Parttime");
+			WORKING_HOUR = 4;
+		}
+		else {			
 			System.out.println("The Employee is Absent");
 			WORKING_HOUR = 0;
 		}
