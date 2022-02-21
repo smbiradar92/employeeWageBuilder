@@ -4,7 +4,7 @@ public class EmpWageBuilderUC1 {
 
 	public static void main(String[] args) {
 		// declare variables
-		final int PRESENT_WAGE_RANGE = 3;
+		final int PRESENT_RANGE = 3;
 		final int PRESENT = 1;
 		final int PARTTIME = 2;
 		final int WAGE_PER_HOUR = 20;
@@ -13,7 +13,7 @@ public class EmpWageBuilderUC1 {
 		
 		//Computation by Switch Case
 		
-		int isEmpPresent = (int)Math.floor(Math.random()*2);
+		int isEmpPresent = (int)Math.floor(Math.random()*PRESENT_RANGE);
 		
 			System.out.println(isEmpPresent);
 			
