@@ -11,24 +11,28 @@ public class EmpWageBuilderUC1 {
 		int WORKING_HOUR = 0;
 		int EMP_WAGE=0;
 		
-		//Computation
+		//Computation by Switch Case
+		
 		int isEmpPresent = (int)Math.floor(Math.random()*2);
 		
 			System.out.println(isEmpPresent);
 			
-		if ( isEmpPresent == PRESENT ) {	
+		switch ( isEmpPresent ) {
+		case PRESENT: {
 			System.out.println("The Employee is Present");
-			WORKING_HOUR = 8;
-		}
-		else if ( isEmpPresent == PARTTIME ) {
+			WORKING_HOUR = 8;			
+			break;
+			}
+		case PARTTIME: {
 			System.out.println("The Employee works as Parttime");
 			WORKING_HOUR = 4;
+			break;
 		}
-		else {			
+		default:
 			System.out.println("The Employee is Absent");
 			WORKING_HOUR = 0;
+		break;
 		}
-		
 		// Wage calculation condtion:
 		
 		EMP_WAGE = WAGE_PER_HOUR*WORKING_HOUR;
