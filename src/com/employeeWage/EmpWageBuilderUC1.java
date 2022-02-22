@@ -12,6 +12,7 @@ public class EmpWageBuilderUC1 {
 		int WORKING_HOUR = 0;
 		int EMP_WAGE=0;
 		int day = 0;
+		int totalWorkingHour = 0;
 		
 		//Computation by for loop
 		
@@ -19,32 +20,33 @@ public class EmpWageBuilderUC1 {
 		
 		int isEmpPresent = (int)Math.floor(Math.random()*PRESENT_RANGE);
 		
-			System.out.println("day"+day);
-			
 			switch ( isEmpPresent ) {
 			case PRESENT: {
-				System.out.println("The Employee works as Parttime");
+				//System.out.println("The Employee works as Present");
 				WORKING_HOUR = 8;			
 				break;
 			}
 			case PARTTIME: {
-				System.out.println("The Employee is Parttime");
-				WORKING_HOUR = 4;
-				break;
+				//System.out.println("The Employee is Parttime");
+				WORKING_HOUR = 4;			
 			}
+				break;
+			
 			default:
-				System.out.println("The Employee is Absent");
-				WORKING_HOUR = 0;
+				//System.out.println("The Employee is Absent");
+				//WORKING_HOUR = 0;
 			break;
 			}	
 		
 		// Wage calculation condtion:
-		
-		EMP_WAGE = WAGE_PER_HOUR*WORKING_HOUR;
-	
-			System.out.println("Employee Wage is : $" +EMP_WAGE );
-		
+			
+		EMP_WAGE = WAGE_PER_HOUR*WORKING_HOUR;	
+		totalWorkingHour = totalWorkingHour + WORKING_HOUR/2;
 		}
+		double salary= totalWorkingHour*EMP_WAGE;	
+		
+		System.out.println("Total Working hours:" +totalWorkingHour + " " + "Employee Monthly Wage is : $" +salary );
+		
 	}
 	
 }
