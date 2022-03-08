@@ -7,7 +7,18 @@ public class EmpWageBuilderUC {
 	final int PART_TIME = 2;
 	final int WORKING_HOUR = 8;
 
-	public int getWorkingHour(int empPresent) {
+	String company;
+	int maxWorkingDay, maxWorkingHour, wagePerHour;
+
+	public EmpWageBuilderUC(String company, int maxWorkingDay, int maxWorkingHour, int wagePerHour) {
+		this.company = company;					 //blue is instance variable	
+		this.maxWorkingDay = maxWorkingDay;
+		this.maxWorkingHour = maxWorkingHour;
+		this.wagePerHour = wagePerHour;
+		
+	}
+
+	public int getWorkingHour(int empPresent) {		
 		switch (empPresent) {
 		case PRESENT:
 			return WORKING_HOUR;
@@ -17,7 +28,7 @@ public class EmpWageBuilderUC {
 		return 0;
 	}
 
-	public double calculateEmpWage(String company,int maxWorkingDay,int maxWorkingHour,int wagePerHour) {
+	public double calculateEmpWage() {
 		System.out.println("Calculating the wage for the employee of " +company );
 		int totalWorkingHour = 0;
 		int day = 0;
@@ -43,14 +54,18 @@ public class EmpWageBuilderUC {
 	}
 
 	public static void main(String[] args) {
-		EmpWageBuilderUC empWageBuilderUC = new EmpWageBuilderUC();
-		empWageBuilderUC.calculateEmpWage("DMart",20,80,20);
+		
+		EmpWageBuilderUC dmartEmp = new EmpWageBuilderUC("DMart",22, 60, 30);
+		dmartEmp.calculateEmpWage();
+		System.out.println("----------------------------------------------------------------------------------------");		
+		EmpWageBuilderUC rilmp = new EmpWageBuilderUC("RIL",25, 50, 25);
+		dmartEmp.calculateEmpWage();
+		System.out.println("----------------------------------------------------------------------------------------");	
+		EmpWageBuilderUC hpEmp = new EmpWageBuilderUC("hp",30, 50, 25);
+		dmartEmp.calculateEmpWage();
 		System.out.println("----------------------------------------------------------------------------------------");
-		empWageBuilderUC.calculateEmpWage("RIL",15,50,30);
-		System.out.println("----------------------------------------------------------------------------------------");
-		empWageBuilderUC.calculateEmpWage("TCS",20,40,40);
-		System.out.println("----------------------------------------------------------------------------------------");
-		empWageBuilderUC.calculateEmpWage("RIL",25,35,30);
+		EmpWageBuilderUC lenovoEmp = new EmpWageBuilderUC("Lenovo",20, 50, 25);
+		dmartEmp.calculateEmpWage();
 		System.out.println("----------------------------------------------------------------------------------------");
 	}
 }
